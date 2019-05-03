@@ -1,4 +1,3 @@
-
 package edu.dmacc.codedsm;
 
 import org.junit.After;
@@ -20,10 +19,9 @@ public class GameLogicTest {
             public boolean isVictorious() {
                 return true;
             }
-        };       //new gamerunner
-        GameLogic gameLogic = new GameLogic(stubGameRunner);  //new gamelogic
-        GameResult gameResult = gameLogic.runGame("Tam" +
-                "my");  //call the method that you want to test
+        };
+        GameLogic gameLogic = new GameLogic(stubGameRunner); //new gamelogic
+        GameResult gameResult = gameLogic.runGame("Tammy");  //call the method that you want to test
         assertEquals(10000, gameResult.getScore().intValue()); //assert what you are testing score
     }
 
@@ -39,10 +37,10 @@ public class GameLogicTest {
             public boolean isDefeated() {
                 return true;
             }
-        };       //new gamerunner
-        GameLogic gameLogic = new GameLogic(stubGameRunner);  //new gamelogic
-        GameResult gameResult = gameLogic.runGame("Paige");  //call the method that you want to test
-        assertEquals(100, gameResult.getScore().intValue()); //assert what you are testing score
+        };
+        GameLogic gameLogic = new GameLogic(stubGameRunner);
+        GameResult gameResult = gameLogic.runGame("Paige");
+        assertEquals(100, gameResult.getScore().intValue());
     }
 
     @Test
@@ -52,10 +50,10 @@ public class GameLogicTest {
             public boolean isDefeated() {
                 return true;
             }
-        };       //new gamerunner
-        GameLogic gameLogic = new GameLogic(stubGameRunner);  //new gamelogic
-        GameResult gameResult = gameLogic.runGame("Kelly");  //call the method that you want to test
-        assertEquals("Kelly", gameResult.getPlayer()); //assert what you are testing score
+        };
+        GameLogic gameLogic = new GameLogic(stubGameRunner);
+        GameResult gameResult = gameLogic.runGame("Kelly");
+        assertEquals("Kelly", gameResult.getPlayer());
     }
 
     private class StubGameRunner implements GameRunner {   //had to create since we did not have class that implements
